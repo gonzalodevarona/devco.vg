@@ -46,7 +46,9 @@ public class LinkedList implements CrudConsole, CrudGame{
 	}
 	
 	
-	//METHODS FOR CONSOLE
+	
+	
+	//-------------- METHODS FOR CONSOLE --------------
 	
 	@Override
 	public void addConsole(Console newConsole) {
@@ -126,9 +128,70 @@ public class LinkedList implements CrudConsole, CrudGame{
 		}
 		
 	}
+	
+	//SELECTION SORT 1
+	public void sortConsoleByName() {
+		Console match = getFirstConsole();
+		Console smaller = null;
+		
+		while(match != null ) {
+			smaller = match.smallerThanByName();
+
+			if(smaller != null) {
+				
+				switchPositions(match, smaller);
+			}
+			
+			match = match.getNext();
+		}
+		
+	}
+	
+	//SELECTION SORT 2
+	public void sortConsoleByPrice() {
+			Console match = getFirstConsole();
+			Console smaller = null;
+			
+			while(match != null ) {
+				smaller = match.smallerThanByPrice();
+
+				if(smaller != null) {
+					
+					switchPositions(match, smaller);
+				}
+				
+				match = match.getNext();
+			}
+			
+	}
+		
 
 	
-	//METHODS FOR GAME
+	public void switchPositions(Console match, Console smaller) {
+		
+		Console tempM = match.clone();
+		Console tempS = smaller.clone();
+		
+		match.setName(tempS.getName());
+		match.setPrice(tempS.getPrice());
+		match.setPreowned(tempS.getPreowned());
+		match.setDescription(tempS.getDescription());
+		match.setQuantity(tempS.getQuantity());
+		match.setImgRef(tempS.getImgRef());
+		match.setReleaseDate(tempS.getReleaseDate());
+		
+		smaller.setName(tempM.getName());
+		smaller.setPrice(tempM.getPrice());
+		smaller.setPreowned(tempM.getPreowned());
+		smaller.setDescription(tempM.getDescription());
+		smaller.setQuantity(tempM.getQuantity());
+		smaller.setImgRef(tempM.getImgRef());
+		smaller.setReleaseDate(tempM.getReleaseDate());
+		
+	}
+
+	
+	//-------------- METHODS FOR GAME --------------
 	
 	
 	@Override

@@ -271,8 +271,6 @@ public class Business {
 	
 	//-------------------- METHODS FOR CLIENT --------------------
 	
-
-
 	public boolean addClient(Client newClient) throws NumberFormatException {
 		boolean done = false;
 		String theId = newClient.getId();

@@ -11,6 +11,6 @@
 
 package control;
 
-public class ControlApp {
+public class ControlClients {
 
 } //end of class
