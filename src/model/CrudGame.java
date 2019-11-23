@@ -11,34 +11,16 @@
 
 package model;
 
-import javafx.scene.image.Image;
-
-public class Card extends Accessory {
-
-	private double durationInMonths;
-
-	/**
-	 * 
-	 * @param name
-	 * @param price
-	 * @param description
-	 * @param quantity
-	 * @param imgRef
-	 * @param compatibleConsole
-	 */
-	public Card(String name, double price, String description, int quantity, Image imgRef, String compatibleConsole, double durationInMonths) {
-		super(name, price, false, description, quantity, imgRef,compatibleConsole);
-		this.durationInMonths = durationInMonths;
-	}
-
-	public double getDurationInMonths() {
-		return durationInMonths;
-	}
-
-	public void setDurationInMonths(double durationInMonths) {
-		this.durationInMonths = durationInMonths;
-	}
+public interface CrudGame {
 	
+	public void addGame(Game newGame);
 	
+	public Game getLastGame();
+	
+	public Game findPriorGame(Game actual);
+	
+	public Game findGameByName(String theId); 
+	
+	public void eraseGame(Game death);
 
-} //end of class
+} //end of class;

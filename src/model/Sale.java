@@ -96,7 +96,35 @@ public class Sale {
 	public void setSaleProducts(ArrayList<Product> saleProducts) {
 		this.saleProducts = saleProducts;
 	}
+
+	public int compareByNumber(Sale sale2) {
+		int value = 0;
+		
+		String saleId = sale2.getNumberOfSale();
+		if(getNumberOfSale().compareToIgnoreCase(saleId) >0){
+			value = 1;
+		}else if(getNumberOfSale().compareToIgnoreCase(saleId) <0){
+			value = -1;
+		} 
+	    
+		return value;
+	}
+
+	public int compareByDate(Sale sale2) {
+		
+		int value = 0;
+		
+		GregorianCalendar sale2Date = sale2.getSaleDate();
+    	if(getSaleDate().compareTo(sale2Date) > 0 ){
+    		value = 1;
+    	}else if(getSaleDate().compareTo(sale2Date) < 0){
+    		value = -1;
+    	} 
+        
+		return value;
+		
+	}
 	
 	
 
-}
+} //end of class

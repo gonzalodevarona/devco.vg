@@ -11,34 +11,15 @@
 
 package model;
 
-import javafx.scene.image.Image;
+import java.util.GregorianCalendar;
 
-public class Card extends Accessory {
-
-	private double durationInMonths;
-
-	/**
-	 * 
-	 * @param name
-	 * @param price
-	 * @param description
-	 * @param quantity
-	 * @param imgRef
-	 * @param compatibleConsole
-	 */
-	public Card(String name, double price, String description, int quantity, Image imgRef, String compatibleConsole, double durationInMonths) {
-		super(name, price, false, description, quantity, imgRef,compatibleConsole);
-		this.durationInMonths = durationInMonths;
-	}
-
-	public double getDurationInMonths() {
-		return durationInMonths;
-	}
-
-	public void setDurationInMonths(double durationInMonths) {
-		this.durationInMonths = durationInMonths;
-	}
+public interface CrudExpense {
 	
+	public void addExpense(Expense newExpense);
+	
+	public Expense searchExpenseByNumber(String theId);
+	
+	public Expense searchExpenseByDate(GregorianCalendar theDate);
 	
 
-} //end of class
+} //end of interface

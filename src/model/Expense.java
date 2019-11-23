@@ -97,6 +97,42 @@ public class Expense {
 	public void setLeftExpense(Expense leftExpense) {
 		this.leftExpense = leftExpense;
 	}
+
+	public void addExpense(Expense newExpense) {
+		if (compareByDate(newExpense)<0) {
+			if (rightExpense != null) {
+				rightExpense.addExpense(newExpense);
+			} else {
+				setRightExpense(newExpense);
+			}
+			
+		} 
+		if (compareByDate(newExpense)>0){
+			if (leftExpense != null) {
+				leftExpense.addExpense(newExpense);
+			} else {
+				setLeftExpense(newExpense);
+			}
+		} 
+		
+	}
+
+	private int compareByDate(Expense newExpense) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	public Expense searchExpenseByDate(Expense theDate) {
+		if (compareByDate(theDate) == 0) {
+			return this;
+		} else if (compareByDate(theDate) > 0 && getLeftExpense() != null) {
+			getLeftExpense().searchExpenseByDate(theDate);
+		} else if(getRightExpense() != null){
+			getRightExpense().searchExpenseByDate(theDate);
+		} 
+		
+		return null;
+	}
 	
 	
 

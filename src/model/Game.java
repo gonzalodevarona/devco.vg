@@ -35,9 +35,9 @@ public class Game extends Console {
 		return this.console;
 	}
 
-	public Game(String name, double price, String description, int quantity, Image imgRef,
+	public Game(String name, double price, boolean preowned, String description, int quantity, Image imgRef,
 			GregorianCalendar releaseDate, String console) {
-		super(name, price, description, quantity, imgRef, releaseDate);
+		super(name, price, preowned, description, quantity, imgRef, releaseDate);
 		this.console = console;
 	}
 

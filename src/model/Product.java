@@ -17,6 +17,7 @@ public class Product {
 
 	private String name;
 	private double price;
+	private boolean preowned;
 	private String description;
 	private int quantity;
 	private Image imgRef;
@@ -32,10 +33,11 @@ public class Product {
 	
 
 
-	public Product(String name, double price, String description, int quantity, Image imgRef) {
+	public Product(String name, double price, boolean preowned, String description, int quantity, Image imgRef) {
 		super();
 		this.name = name;
 		this.price = price;
+		this.preowned = preowned;
 		this.description = description;
 		this.quantity = quantity;
 		this.imgRef = imgRef;
@@ -101,4 +103,14 @@ public class Product {
 		this.imgRef = imgRef;
 	}
 
-}
+	public boolean getPreowned() {
+		return preowned;
+	}
+
+	public void setPreowned(boolean preowned) {
+		this.preowned = preowned;
+	}
+	
+	
+
+} //end of class

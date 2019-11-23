@@ -37,9 +37,9 @@ public class Console extends Product {
 		return this.releaseDate;
 	}
 
-	public Console(String name, double price, String description, int quantity, Image imgRef,
+	public Console(String name, double price, boolean preowned, String description, int quantity, Image imgRef,
 			GregorianCalendar releaseDate) {
-		super(name, price, description, quantity, imgRef);
+		super(name, price, preowned, description, quantity, imgRef);
 		this.releaseDate = releaseDate;
 		this.prior = null;
 		this.next = null;

@@ -19,6 +19,7 @@ public class Client {
 	private String phone;
 	private String address;
 	private String email;
+	
 
 	/**
 	 * 
@@ -114,6 +115,34 @@ public class Client {
 		this.email = email;
 	}
 
-}
+	public int compareById( Client client2) {
+		
+	int value = 0;
+		
+		String person2ID = client2.getId();
+		if(getId().compareToIgnoreCase(person2ID) >0){
+			value = 1;
+		}else if(getId().compareToIgnoreCase(person2ID) <0){
+			value = -1;
+		} 
+	    
+		return value;
+	}
+	
+	public int compareByLastName( Client client2) {
+		
+		int value = 0;
+			
+			String person2ID = client2.getLastName();
+			if(getLastName().compareToIgnoreCase(person2ID) >0){
+				value = 1;
+			}else if(getLastName().compareToIgnoreCase(person2ID) <0){
+				value = -1;
+			} 
+		    
+			return value;
+	}
+
+} //end of class
 
 
