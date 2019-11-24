@@ -139,7 +139,7 @@ public class LinkedList implements CrudConsole, CrudGame{
 
 			if(smaller != null) {
 				
-				switchPositions(match, smaller);
+				switchPositionsConsole(match, smaller);
 			}
 			
 			match = match.getNext();
@@ -149,25 +149,45 @@ public class LinkedList implements CrudConsole, CrudGame{
 	
 	//SELECTION SORT 2
 	public void sortConsoleByPrice() {
-			Console match = getFirstConsole();
-			Console smaller = null;
-			
-			while(match != null ) {
-				smaller = match.smallerThanByPrice();
-
-				if(smaller != null) {
-					
-					switchPositions(match, smaller);
-				}
+		Console match = getFirstConsole();
+		Console smaller = null;
+		
+		while(match != null ) {
+			smaller = match.smallerThanByPrice();
+	
+			if(smaller != null) {
 				
-				match = match.getNext();
+				switchPositionsConsole(match, smaller);
 			}
 			
+			match = match.getNext();
+		}
+			
 	}
+	
+	//SELECTION SORT 3
+	public void sortConsoleByDate() {
+		Console match = getFirstConsole();
+		Console smaller = null;
+		
+		while(match != null ) {
+			smaller = match.smallerThanByDate();
+
+			if(smaller != null) {
+				
+				switchPositionsConsole(match, smaller);
+			}
+			
+			match = match.getNext();
+		}
+				
+	}
+	
+	
 		
 
 	
-	public void switchPositions(Console match, Console smaller) {
+	public void switchPositionsConsole(Console match, Console smaller) {
 		
 		Console tempM = match.clone();
 		Console tempS = smaller.clone();
@@ -270,6 +290,117 @@ public class LinkedList implements CrudConsole, CrudGame{
 			}
 		}
 		
+	}
+	
+	public void switchPositionsGame(Game match, Game smaller) {
+		
+		Game tempM = match.clone();
+		Game tempS = smaller.clone();
+		
+		match.setName(tempS.getName());
+		match.setPrice(tempS.getPrice());
+		match.setPreowned(tempS.getPreowned());
+		match.setDescription(tempS.getDescription());
+		match.setQuantity(tempS.getQuantity());
+		match.setImgRef(tempS.getImgRef());
+		match.setReleaseDate(tempS.getReleaseDate());
+		
+		smaller.setName(tempM.getName());
+		smaller.setPrice(tempM.getPrice());
+		smaller.setPreowned(tempM.getPreowned());
+		smaller.setDescription(tempM.getDescription());
+		smaller.setQuantity(tempM.getQuantity());
+		smaller.setImgRef(tempM.getImgRef());
+		smaller.setReleaseDate(tempM.getReleaseDate());
+		
+	}
+	
+	public void sortGamesByName() {
+		Game match = getFirstGame();
+		Game priorG = null;
+		Game nextMatch = null;
+		
+		while(match != null ) {
+			 nextMatch = (Game) match.getNext(); 
+			 
+			 priorG = match;
+			
+				while(priorG != null) {
+					if(nextMatch != null && priorG.compareByName(nextMatch) > 0) {
+						switchPositionsGame(priorG, nextMatch);
+					}
+					
+					priorG = findPriorGame(priorG);
+				}		
+					
+			match = nextMatch;
+		}
+	}
+	
+	public void sortGamesByPrice() {
+		Game match = getFirstGame();
+		Game priorG = null;
+		Game nextMatch = null;
+		
+		while(match != null ) {
+			 nextMatch = (Game) match.getNext(); 
+			 
+			 priorG = match;
+			
+				while(priorG != null) {
+					if(nextMatch != null && priorG.compareByPrice(nextMatch) > 0) {
+						switchPositionsGame(priorG, nextMatch);
+					}
+					
+					priorG = findPriorGame(priorG);
+				}		
+					
+			match = nextMatch;
+		}
+	}
+	
+	public void sortGamesByConsole() {
+		Game match = getFirstGame();
+		Game priorG = null;
+		Game nextMatch = null;
+		
+		while(match != null ) {
+			 nextMatch = (Game) match.getNext(); 
+			 
+			 priorG = match;
+			
+				while(priorG != null) {
+					if(nextMatch != null && priorG.compareByConsole(nextMatch) > 0) {
+						switchPositionsGame(priorG, nextMatch);
+					}
+					
+					priorG = findPriorGame(priorG);
+				}		
+					
+			match = nextMatch;
+		}
+	}
+	
+	public void sortGamesByQuantity() {
+		Game match = getFirstGame();
+		Game priorG = null;
+		Game nextMatch = null;
+		
+		while(match != null ) {
+			 nextMatch = (Game) match.getNext(); 
+			 
+			 priorG = match;
+			
+				while(priorG != null) {
+					if(nextMatch != null && priorG.compareByQuantity(nextMatch) > 0) {
+						switchPositionsGame(priorG, nextMatch);
+					}
+					
+					priorG = findPriorGame(priorG);
+				}		
+					
+			match = nextMatch;
+		}
 	}
 
 } //end of class

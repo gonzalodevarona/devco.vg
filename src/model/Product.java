@@ -111,6 +111,59 @@ public class Product {
 		this.preowned = preowned;
 	}
 	
+	public int compareByName( Product product2) {
+		int value = 0;
+			
+		String product2Name = product2.getName();
+		if(getName().compareToIgnoreCase(product2Name) >0){
+			value = 1;
+		}else if(getName().compareToIgnoreCase(product2Name) <0){
+			value = -1;
+		} 
+	    
+		return value;
+	}
+	
+	public int compareByPrice(Product product2) {
+		int value = 0;
+		
+		double product2Price = product2.getPrice();
+		if(getPrice() > product2Price){
+			value = 1;
+		}else if(getPrice() < product2Price){
+			value = -1;
+		} 
+	    
+		return value;
+	}
+	
+	public int compareByQuantity(Product product2) {
+		int value = 0;
+		
+		int product2Quantity = product2.getQuantity();
+		if(getQuantity() > product2Quantity){
+			value = 1;
+		}else if(getQuantity() < product2Quantity){
+			value = -1;
+		} 
+	    
+		return value;
+	}
+	
+	public Product clone() {
+		Product other = new Product("", 0, false, "", 0, null);
+		
+		other.setName(getName());
+		other.setPrice(getPrice());
+		other.setPreowned(getPreowned());
+		other.setDescription(getDescription());
+		other.setQuantity(getQuantity());
+		other.setImgRef(getImgRef());
+		
+
+		return other;
+	}
+	
 	
 
 } //end of class

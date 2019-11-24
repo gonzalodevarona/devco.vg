@@ -48,5 +48,29 @@ public class Game extends Console {
 	public void setConsole(String console) {
 		this.console = console;
 	}
+	
+	public Game clone() {
+		Game other = new Game("", 0, false, "", 0, null, null, "");
+		
+		other = (Game) super.clone();
+		other.setConsole(getConsole());
 
-}
+		return other;
+	}
+
+	public int compareByConsole(Game game2) {
+		int value = 0;
+		
+		String game2Console = game2.getConsole();
+		if(getConsole().compareToIgnoreCase(game2Console) >0){
+			value = 1;
+		}else if(getConsole().compareToIgnoreCase(game2Console) <0){
+			value = -1;
+		} 
+	    
+		return value;
+	}
+
+
+
+} //end of class
