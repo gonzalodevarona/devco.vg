@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+<Pane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <HBox alignment="CENTER" layoutY="38.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="362.0" prefWidth="600.0" spacing="30.0">
+         <children>
+            <ImageView fx:id="cover" fitHeight="265.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@contenido_no_disponible.gif" />
+               </image>
+            </ImageView>
+            <VBox alignment="CENTER" prefHeight="362.0" prefWidth="312.0">
+               <children>
+                  <HBox prefHeight="100.0" prefWidth="274.0" spacing="10.0">
+                     <children>
+                        <Label text="Nombre:" />
+                        <TextField fx:id="nameCard" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+                     <children>
+                        <Label text="Precio:" />
+                        <TextField fx:id="priceCard" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="52.0" prefWidth="278.0" spacing="10.0">
+                     <children>
+                        <Label text="Descripción:" />
+                        <TextArea fx:id="descriptionCard" prefHeight="200.0" prefWidth="200.0" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+                     <children>
+                        <Label text="Cantidad:" />
+                        <TextField fx:id="quantityCard" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+                     <children>
+                        <Label text="Compatible con:" />
+                        <TextField fx:id="compatibleCard" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+                     <children>
+                        <Label prefHeight="28.0" prefWidth="113.0" text="Duración en meses:" />
+                        <TextField fx:id="durationCard" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </children>
+</Pane>

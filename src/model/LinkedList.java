@@ -11,7 +11,9 @@
 
 package model;
 
-public class LinkedList implements CrudConsole, CrudGame{
+import java.io.Serializable;
+
+public class LinkedList implements CrudConsole, CrudGame, Serializable{
 
 	private Console firstConsole;
 	private Game firstGame;
@@ -109,7 +111,8 @@ public class LinkedList implements CrudConsole, CrudGame{
 	}
 
 	@Override
-	public void eraseConsole(Console death) {
+	public void eraseConsole(String theId) {
+		Console death = findConsoleByName(theId);
 		if (death != null) {
 			
 			Console priorC = death.getPrior();
@@ -126,6 +129,7 @@ public class LinkedList implements CrudConsole, CrudGame{
 				
 			}
 		}
+		
 		
 	}
 	
@@ -272,7 +276,8 @@ public class LinkedList implements CrudConsole, CrudGame{
 	}
 
 	@Override
-	public void eraseGame(Game death) {
+	public void eraseGame(String theId) {
+		Game death = findGameByName(theId);
 		if (death != null) {
 			
 			Game priorC = (Game)death.getPrior();
@@ -326,11 +331,12 @@ public class LinkedList implements CrudConsole, CrudGame{
 			 priorG = match;
 			
 				while(priorG != null) {
-					if(nextMatch != null && priorG.compareByName(nextMatch) > 0) {
-						switchPositionsGame(priorG, nextMatch);
+					
+					if(priorG.getNext() != null && priorG.compareByName(priorG.getNext()) > 0) {
+						switchPositionsGame(priorG, (Game)priorG.getNext());
 					}
 					
-					priorG = findPriorGame(priorG);
+					priorG = (Game) priorG.getPrior();
 				}		
 					
 			match = nextMatch;
@@ -348,11 +354,11 @@ public class LinkedList implements CrudConsole, CrudGame{
 			 priorG = match;
 			
 				while(priorG != null) {
-					if(nextMatch != null && priorG.compareByPrice(nextMatch) > 0) {
+					if(priorG.getNext() != null && priorG.compareByPrice(priorG.getNext()) > 0) {
 						switchPositionsGame(priorG, nextMatch);
 					}
 					
-					priorG = findPriorGame(priorG);
+					priorG = (Game) priorG.getPrior();
 				}		
 					
 			match = nextMatch;
@@ -370,11 +376,11 @@ public class LinkedList implements CrudConsole, CrudGame{
 			 priorG = match;
 			
 				while(priorG != null) {
-					if(nextMatch != null && priorG.compareByConsole(nextMatch) > 0) {
+					if(priorG.getNext() != null && priorG.compareByConsole((Game)priorG.getNext()) > 0) {
 						switchPositionsGame(priorG, nextMatch);
 					}
 					
-					priorG = findPriorGame(priorG);
+					priorG = (Game)priorG.getPrior();
 				}		
 					
 			match = nextMatch;
@@ -392,11 +398,11 @@ public class LinkedList implements CrudConsole, CrudGame{
 			 priorG = match;
 			
 				while(priorG != null) {
-					if(nextMatch != null && priorG.compareByQuantity(nextMatch) > 0) {
-						switchPositionsGame(priorG, nextMatch);
+					if(priorG.getNext() != null && priorG.compareByQuantity(priorG.getNext()) > 0) {
+						switchPositionsGame(priorG, (Game) priorG.getNext());
 					}
 					
-					priorG = findPriorGame(priorG);
+					priorG = (Game) priorG.getPrior();
 				}		
 					
 			match = nextMatch;

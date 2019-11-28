@@ -21,6 +21,6 @@ public interface CrudConsole {
 	
 	public Console findConsoleByName(String theId); 
 	
-	public void eraseConsole(Console death);
+	public void eraseConsole(String theId);
 
 } //end of class;

@@ -11,11 +11,16 @@
 
 package model;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.GregorianCalendar;
 
 
-public class Business {
+public class Business implements Serializable{
 
 	private LinkedList linkedList;
 	private Tree tree;
@@ -160,12 +165,20 @@ public class Business {
 	
 	
 	
-	
-	
 	//-------------------- METHODS FOR SALE --------------------
 	
-	public void addSale(Sale newSale) {
-		sales.add(newSale);
+	public boolean addSale(Sale newSale) {
+		boolean done = false;
+		String theId = newSale.getNumberOfSale();
+		
+		
+			
+			if (findSaleByNumber(theId) == null) {
+				sales.add(newSale);
+				done = true;
+			}
+		
+		return done;
 	}
 	
 	public void eraseSale(Sale death) {
@@ -286,6 +299,7 @@ public class Business {
 		
 	}
 	
+	//REVISAR
 	public void eraseClient(Client death) {
 		clients.remove(death);
 	}

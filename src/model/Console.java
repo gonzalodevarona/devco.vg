@@ -80,7 +80,12 @@ public class Console extends Product {
 	public Console clone() {
 		Console other = new Console("", 0, false, "", 0, null, null);
 		
-		other = (Console) super.clone();
+		other.setName(getName());
+		other.setPrice(getPrice());
+		other.setPreowned(getPreowned());
+		other.setDescription(getDescription());
+		other.setQuantity(getQuantity());
+		other.setImgRef(getImgRef());
 		other.setReleaseDate(getReleaseDate());
 		
 		other.setNext(getNext());

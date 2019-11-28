@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<fx:root type="javafx.scene.layout.VBox" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="274.0" prefWidth="600.0" spacing="15.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" >
+   <children>
+      <Label fx:id="searchL" text="BUSCADOR">
+         <font>
+            <Font name="Futura Medium" size="33.0" />
+         </font>
+      </Label>
+      <TextField fx:id="textBox" alignment="CENTER" promptText="escribe el nombre de lo que vas a buscar" />
+      <HBox alignment="TOP_CENTER" disable="true" prefHeight="42.0" prefWidth="600.0" spacing="25.0">
+         <children>
+            <RadioButton mnemonicParsing="false" text="Mostrar" />
+            <RadioButton mnemonicParsing="false" text="Modificar" />
+            <RadioButton mnemonicParsing="false" text="Borrar" />
+         </children>
+      </HBox>
+      <Button fx:id="goButton" mnemonicParsing="false" text="Go Go Go">
+         <font>
+            <Font name="Futura Medium" size="13.0" />
+         </font>
+      </Button>
+   </children>
+</fx:root>

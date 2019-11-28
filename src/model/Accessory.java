@@ -11,9 +11,10 @@
 
 package model;
 
+
 import javafx.scene.image.Image;
 
-public class Accessory extends Product implements Comparable<Accessory> {
+public class Accessory extends Product implements Comparable<Accessory>{
 
 	private Accessory right;
 	private Accessory left;

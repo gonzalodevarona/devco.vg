@@ -11,10 +11,11 @@
 
 package model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.GregorianCalendar;
 
-public class Sale {
+public class Sale implements Serializable{
 
 	private ArrayList<Product> saleProducts;
 	private Client client;

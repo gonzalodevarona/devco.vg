@@ -11,9 +11,11 @@
 
 package model;
 
+import java.io.Serializable;
+
 import javafx.scene.image.Image;
 
-public class Product {
+public class Product implements Serializable{
 
 	private String name;
 	private double price;
@@ -150,19 +152,7 @@ public class Product {
 		return value;
 	}
 	
-	public Product clone() {
-		Product other = new Product("", 0, false, "", 0, null);
-		
-		other.setName(getName());
-		other.setPrice(getPrice());
-		other.setPreowned(getPreowned());
-		other.setDescription(getDescription());
-		other.setQuantity(getQuantity());
-		other.setImgRef(getImgRef());
-		
-
-		return other;
-	}
+	
 	
 	
 

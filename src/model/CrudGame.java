@@ -21,6 +21,6 @@ public interface CrudGame {
 	
 	public Game findGameByName(String theId); 
 	
-	public void eraseGame(Game death);
+	public void eraseGame(String theId);
 
 } //end of class;

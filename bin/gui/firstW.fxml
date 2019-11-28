@@ -1,15 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root type="javafx.scene.layout.VBox" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
   <children>
     <MenuBar VBox.vgrow="NEVER">
       <menus>
@@ -21,6 +25,31 @@
                         <MenuItem mnemonicParsing="false" text="Juego" />
                         <MenuItem mnemonicParsing="false" text="Accesorio" />
                     </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="Ordenar">
+                     <items>
+                        <Menu mnemonicParsing="false" text="Consolas">
+                           <items>
+                              <MenuItem mnemonicParsing="false" text="Por Nombre" />
+                              <MenuItem mnemonicParsing="false" text="Por Precio" />
+                              <MenuItem mnemonicParsing="false" text="Por Fecha de Lanzamiento" />
+                           </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="Juegos">
+                           <items>
+                              <MenuItem mnemonicParsing="false" text="Consola" />
+                              <MenuItem mnemonicParsing="false" text="Juego" />
+                              <MenuItem mnemonicParsing="false" text="Accesorio" />
+                           </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="Accesorios">
+                           <items>
+                              <MenuItem mnemonicParsing="false" text="Consola" />
+                              <MenuItem mnemonicParsing="false" text="Juego" />
+                              <MenuItem mnemonicParsing="false" text="Accesorio" />
+                           </items>
+                        </Menu>
+                     </items>
                   </Menu>
                   <Menu mnemonicParsing="false" text="Agregar">
                      <items>
@@ -38,56 +67,103 @@
                   </Menu>
                </items>
         </Menu>
-            <Menu mnemonicParsing="false" text="Administrativo" />
+            <Menu mnemonicParsing="false" text="Administrativo">
+               <items>
+                  <Menu mnemonicParsing="false" text="Ventas">
+                     <items>
+                        <MenuItem mnemonicParsing="false" text="Buscar" />
+                        <Menu mnemonicParsing="false" text="Ordenar">
+                           <items>
+                              <MenuItem mnemonicParsing="false" text="Buscar" />
+                              <MenuItem mnemonicParsing="false" text="Gasto" />
+                           </items>
+                        </Menu>
+                        <MenuItem mnemonicParsing="false" text="Agregar" />
+                        <MenuItem mnemonicParsing="false" text="Borrar" />
+                     </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="Gastos">
+                     <items>
+                        <MenuItem mnemonicParsing="false" text="Buscar" />
+                        <Menu mnemonicParsing="false" text="Ordenar">
+                           <items>
+                              <MenuItem mnemonicParsing="false" text="Buscar" />
+                              <MenuItem mnemonicParsing="false" text="Gasto" />
+                           </items>
+                        </Menu>
+                        <MenuItem mnemonicParsing="false" text="Agregar" />
+                        <MenuItem mnemonicParsing="false" text="Borrar" />
+                     </items>
+                  </Menu>
+               </items>
+            </Menu>
         <Menu mnemonicParsing="false" text="Clientes" />
-        <Menu mnemonicParsing="false" text="Mi Negocio" />
+            <Menu mnemonicParsing="false" text="Mi Negocio">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="Ver Información" />
+                  <MenuItem mnemonicParsing="false" text="Modificar Información" />
+               </items>
+            </Menu>
       </menus>
     </MenuBar>
-    <SplitPane dividerPositions="0.3040089086859688, 0.7260579064587973" focusTraversable="true" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
-         <items>
-            <VBox alignment="CENTER" prefHeight="570.0" prefWidth="530.0">
-               <children>
-                  <Label alignment="CENTER" text="Consolas">
-                     <font>
-                        <Font name="Courier" size="23.0" />
-                     </font>
-                  </Label>
-                  <ScrollPane prefHeight="573.0" prefWidth="278.0">
-                     <content>
-                        <VBox prefHeight="545.0" prefWidth="273.0" />
-                     </content>
-                  </ScrollPane>
-               </children>
-            </VBox>
-            <VBox alignment="CENTER" prefHeight="570.0" prefWidth="530.0">
-               <children>
-                  <Label alignment="CENTER" text="Juegos">
-                     <font>
-                        <Font name="Courier" size="23.0" />
-                     </font>
-                  </Label>
-                  <ScrollPane prefHeight="573.0" prefWidth="278.0">
-                     <content>
-                        <VBox prefHeight="545.0" prefWidth="273.0" />
-                     </content>
-                  </ScrollPane>
-               </children>
-            </VBox>
-            <VBox alignment="CENTER" prefHeight="570.0" prefWidth="530.0">
-               <children>
-                  <Label alignment="CENTER" text="Accesorios">
-                     <font>
-                        <Font name="Courier" size="23.0" />
-                     </font>
-                  </Label>
-                  <ScrollPane prefHeight="573.0" prefWidth="278.0">
-                     <content>
-                        <VBox prefHeight="545.0" prefWidth="273.0" />
-                     </content>
-                  </ScrollPane>
-               </children>
-            </VBox>
-         </items>
-    </SplitPane>
+      <GridPane VBox.vgrow="ALWAYS">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="100.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" percentHeight="100.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+          <SplitPane dividerPositions="0.3040089086859688, 0.7260579064587973" focusTraversable="true">
+               <items>
+                  <VBox alignment="CENTER" prefHeight="570.0" prefWidth="530.0">
+                     <children>
+                        <Label alignment="CENTER" text="Consolas">
+                           <font>
+                              <Font name="Courier" size="23.0" />
+                           </font>
+                        </Label>
+                        <ScrollPane prefHeight="573.0" prefWidth="278.0">
+                           <content>
+                              <VBox prefHeight="545.0" prefWidth="273.0" />
+                           </content>
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                        </ScrollPane>
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER" prefHeight="570.0" prefWidth="530.0">
+                     <children>
+                        <Label alignment="CENTER" text="Juegos">
+                           <font>
+                              <Font name="Courier" size="23.0" />
+                           </font>
+                        </Label>
+                        <ScrollPane prefHeight="573.0" prefWidth="278.0">
+                           <content>
+                              <VBox prefHeight="545.0" prefWidth="273.0" />
+                           </content>
+                        </ScrollPane>
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER" prefHeight="570.0" prefWidth="530.0">
+                     <children>
+                        <Label alignment="CENTER" text="Accesorios">
+                           <font>
+                              <Font name="Courier" size="23.0" />
+                           </font>
+                        </Label>
+                        <ScrollPane prefHeight="573.0" prefWidth="278.0">
+                           <content>
+                              <VBox prefHeight="545.0" prefWidth="273.0" />
+                           </content>
+                        </ScrollPane>
+                     </children>
+                  </VBox>
+               </items>
+          </SplitPane>
+         </children>
+      </GridPane>
   </children>
-</VBox>
+</fx:root>

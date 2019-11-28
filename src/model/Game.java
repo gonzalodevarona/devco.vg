@@ -31,16 +31,19 @@ public class Game extends Console {
 	 */
 	
 
-	public String getConsole() {
-		return this.console;
-	}
 
 	public Game(String name, double price, boolean preowned, String description, int quantity, Image imgRef,
 			GregorianCalendar releaseDate, String console) {
 		super(name, price, preowned, description, quantity, imgRef, releaseDate);
 		this.console = console;
 	}
+	
+	public String getConsole() {
+		return this.console;
+	}
 
+
+	
 	/**
 	 * 
 	 * @param console
@@ -52,7 +55,17 @@ public class Game extends Console {
 	public Game clone() {
 		Game other = new Game("", 0, false, "", 0, null, null, "");
 		
-		other = (Game) super.clone();
+		other.setName(getName());
+		other.setPrice(getPrice());
+		other.setPreowned(getPreowned());
+		other.setDescription(getDescription());
+		other.setQuantity(getQuantity());
+		other.setImgRef(getImgRef());
+		other.setReleaseDate(getReleaseDate());
+		
+		other.setNext(getNext());
+		other.setPrior(getPrior());
+		
 		other.setConsole(getConsole());
 
 		return other;

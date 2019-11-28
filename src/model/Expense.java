@@ -11,9 +11,10 @@
 
 package model;
 
+import java.io.Serializable;
 import java.util.GregorianCalendar;
 
-public class Expense {
+public class Expense implements Serializable{
 
 	private Expense rightExpense;
 	private Expense leftExpense;
@@ -134,6 +135,24 @@ public class Expense {
 		return null;
 	}
 	
+public Expense searchExpenseByNumber(String numberE) {
+		Expense found = null;
+		
+		if (getNumberOfSale().equalsIgnoreCase(numberE)) {
+			found = this;
+		}
+			
+		if (getLeftExpense() != null) {
+			getLeftExpense().searchExpenseByNumber(numberE);
+		}
+		if (getRightExpense() != null) {
+			getRightExpense().searchExpenseByNumber(numberE);
+		}
+		
+		return found;
+		
+	}
+	
 	
 
-}
+} //end of class

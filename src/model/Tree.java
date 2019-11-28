@@ -1,6 +1,6 @@
 /*
 * ˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜˜
-* ID
+ * ID
 * UNIVERSIDAD ICESI (CALI-COLOMBIA)
 * DEPARTAMENTO TIC - ALGORTIMOS Y PROGRAMACIÓN II
 * FINAL PROJECT 
@@ -11,9 +11,10 @@
 
 package model;
 
+import java.io.Serializable;
 import java.util.GregorianCalendar;
 
-public class Tree implements CrudExpense, CrudAccesory{
+public class Tree implements CrudExpense, CrudAccesory, Serializable{
 
 	private Accessory rootAccessory;
 	private Expense rootExpense;
@@ -53,8 +54,13 @@ public class Tree implements CrudExpense, CrudAccesory{
 
 	@Override
 	public Expense searchExpenseByNumber(String theId) {
-		//TODO
-		return null;
+		Expense match = null;
+		
+		if (getRootExpense() != null ) {
+			match = getRootExpense().searchExpenseByNumber(theId);
+		} 
+
+		return match;	
 	}
 
 	@Override
