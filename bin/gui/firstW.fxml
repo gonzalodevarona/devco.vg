@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<fx:root type="javafx.scene.layout.VBox" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<VBox prefHeight="600.0" prefWidth="900.0"  xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="control.AppControl" >
   <children>
     <MenuBar VBox.vgrow="NEVER">
       <menus>
@@ -98,12 +98,7 @@
                </items>
             </Menu>
         <Menu mnemonicParsing="false" text="Clientes" />
-            <Menu mnemonicParsing="false" text="Mi Negocio">
-               <items>
-                  <MenuItem mnemonicParsing="false" text="Ver Información" />
-                  <MenuItem mnemonicParsing="false" text="Modificar Información" />
-               </items>
-            </Menu>
+            <Menu fx:id="myBusiness" onAction="#triggerWindowBusiness" mnemonicParsing="false"  text="Mi Negocio" />
       </menus>
     </MenuBar>
       <GridPane VBox.vgrow="ALWAYS">
@@ -166,4 +161,4 @@
          </children>
       </GridPane>
   </children>
-</fx:root>
+</VBox>

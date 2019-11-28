@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="278.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label layoutX="248.0" layoutY="14.0" text="V E N T A">
+         <font>
+            <Font name="Futura Medium" size="23.0" />
+         </font>
+      </Label>
+      <HBox layoutY="32.0" prefHeight="247.0" prefWidth="600.0">
+         <children>
+            <VBox prefHeight="278.0" prefWidth="300.0">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+                     <children>
+                        <Label text="Número de venta:" />
+                        <Label fx:id="numberSale" text="###" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+                     <children>
+                        <Label text="Total Venta:" />
+                        <Label fx:id="amountSale" text="###" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+                     <children>
+                        <Label text="Fecha de la venta:" />
+                        <Label fx:id="dateSale" text="###" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <VBox fx:id="products" alignment="TOP_CENTER" prefHeight="278.0" prefWidth="302.0">
+               <children>
+                  <Label text="Productos" />
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </children>
+</Pane>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="455.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label text="C L I E N T E">
+         <font>
+            <Font name="Futura Medium" size="30.0" />
+         </font>
+      </Label>
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="12.0">
+         <children>
+            <Label text="Nombre:" />
+            <TextField fx:id="nameClient" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="12.0">
+         <children>
+            <Label text="Apellido:" />
+            <TextField fx:id="lastNameClient" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="12.0">
+         <children>
+            <Label text="ID:   " />
+            <TextField fx:id="idClient" promptText="opcional" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="12.0">
+         <children>
+            <Label text="Celular:" />
+            <TextField fx:id="phoneClient" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="12.0">
+         <children>
+            <Label text="Dirección:" />
+            <TextField fx:id="addressClient" promptText="opcional" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="12.0">
+         <children>
+            <Label text="Email:" />
+            <TextField fx:id="emailClient" promptText="opcional" />
+         </children>
+      </HBox>
+   </children>
+</VBox>

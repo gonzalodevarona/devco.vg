@@ -1,11 +1,11 @@
 package gui;
 	
-import control.ControlBusiness;
+import control.AppControl;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
-import javafx.stage.Stage;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.stage.Stage;
 
 
 public class Main extends Application {
@@ -13,10 +13,12 @@ public class Main extends Application {
 	@Override
 	public void start(Stage primaryStage) {
 		try {
-			ControlBusiness customControl = new ControlBusiness();
+			AppControl ac = new AppControl();
+			
+			Parent root = FXMLLoader.load(getClass().getResource("../gui/firstW.fxml"));
+	        ac.startApp();
 	        
-	        
-	        primaryStage.setScene(new Scene(customControl));
+	        primaryStage.setScene(new Scene(root));
 	        primaryStage.setTitle("D E V C O . v g");
 			primaryStage.show();
 		} catch(Exception e) {
