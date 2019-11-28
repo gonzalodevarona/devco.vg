@@ -43,7 +43,7 @@ public class ControlBusiness extends VBox{
 	
 	Business business;
 	
-	@FXML private TextField textField;
+
 	@FXML private FXMLLoader fxmlLoader;
 	@FXML private Menu modifyBusiness;
 	
